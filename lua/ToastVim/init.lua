@@ -1,9 +1,8 @@
 local M = {}
 
 M.setup = function(opts)
-  require("ToastVim.config.options")
-  require("ToastVim.config.keymaps")
-  require("ToastVim.config.autocmds")
+  require("ToastVim.config")
+  require("ToastVim.lsp")
 end
 
 return M
