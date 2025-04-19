@@ -15,7 +15,7 @@ vim.opt.undolevels = 10000
 -----------------------------------------------------------
 vim.opt.number = true           -- Show line number
 vim.opt.relativenumber = true   -- Show relative line number
-vim.opt.showmatch = true        -- Highlight matching parenthesis
+vim.opt.showmatch = false        -- Highlight matching parenthesis
 vim.opt.colorcolumn = '120'     -- Line lenght marker at 120 columns
 vim.opt.wrap = false            -- Disables word wrap
 vim.opt.termguicolors = true    -- Enable 24-bit RGB colors
@@ -24,8 +24,8 @@ vim.opt.ruler = false           -- Disable the default ruler
 vim.opt.scrolloff = 8           -- Lines of context
 vim.opt.showmode = true         -- Dont show mode since we have a statusline TODO:
 vim.opt.signcolumn = "yes"      -- Always show the signcolumn, otherwise it would shift the text each time
-vim.opt.confirm = true                    -- Confirm to save changes before exiting modified buffer
-vim.opt.cursorline = true                 -- Enable highlighting of the current line
+vim.opt.confirm = true          -- Confirm to save changes before exiting modified buffer
+vim.opt.cursorline = true       -- Enable highlighting of the current line
 
 vim.opt.fillchars = {
   foldopen = "",
