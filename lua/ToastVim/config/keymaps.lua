@@ -1,5 +1,5 @@
 local function mapkey(mode, lhs, rhs, opts)
-local options = { silent = true }
+  local options = { silent = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
@@ -19,11 +19,14 @@ local function map(lhs, rhs, opts)
   vmap(lhs, rhs, opts)
 end
 
-mapkey({"n", "v"}, "<ESC>", function() vim.cmd("nohlsearch") return "<ESC>" end, 
+mapkey({ "n", "v" }, "<ESC>", function()
+    vim.cmd("nohlsearch")
+    return "<ESC>"
+  end,
   { expr = true, desc = "Escape and clear hlsearch" }
 )
-map("<leader>uL", "<CMD>Lazy<CR>", {desc = "Lazy"})
---
+map("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
+
 -- quit
 nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 
@@ -42,4 +45,3 @@ nmap("<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 nmap("<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-
