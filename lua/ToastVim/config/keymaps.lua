@@ -47,10 +47,10 @@ nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width"
 nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Disable
-vim.keymap.del({'n','v'},"gra")
-vim.keymap.del({'n','v'},"gri")
-vim.keymap.del({'n','v'},"grn")
-vim.keymap.del({'n','v'},"grr")
+-- vim.keymap.del({'n','v'},"gra")
+-- vim.keymap.del({'n','v'},"gri")
+-- vim.keymap.del({'n','v'},"grn")
+-- vim.keymap.del({'n','v'},"grr")
 
 -- toggle
 Snacks.toggle.diagnostics():map("<leader>ud")

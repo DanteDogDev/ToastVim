@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       end, { buffer = args.buf, desc = 'Format Buffer' })
     end
     if client:supports_method('textDocument/codeAction') then
-      map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
+      map("gra", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
     end
     if client:supports_method('textDocument/signatureHelp') then
       imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
@@ -44,19 +44,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
       map("gd", vim.lsp.buf.definition, { desc = "Go to Definition", buffer = args.buf })
     end
     if client:supports_method('textDocument/rename') then
-      map("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
+      map("grn", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
     end
     if client:supports_method('textDocument/hover') then
       map("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
     end
     if client:supports_method('textDocument/references') then
-      map("gr", vim.lsp.buf.references, { desc = "Go to References", buffer = args.buf })
+      map("grr", vim.lsp.buf.references, { desc = "References", buffer = args.buf })
+    end
+    if client:supports_method('textDocument/implementation') then
+      map("gri", vim.lsp.buf.implementation, { desc = "Implementation", buffer = args.buf })
     end
     if client:supports_method('textDocument/declaration') then
       map("gD", vim.lsp.buf.declaration, { desc = "Go to Declaration", buffer = args.buf })
-    end
-    if client:supports_method('textDocument/implementation') then
-      map("gi", vim.lsp.buf.implementation, { desc = "Go to Implementation", buffer = args.buf })
     end
     if client:supports_method('textDocument/typeDefinition') then
       map("gt", vim.lsp.buf.type_definition, { desc = "Go to Type Definition", buffer = args.buf })
