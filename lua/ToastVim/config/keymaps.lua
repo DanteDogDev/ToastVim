@@ -1,5 +1,5 @@
 local function mapkey(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
+local options = { silent = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
@@ -19,7 +19,10 @@ local function map(lhs, rhs, opts)
   vmap(lhs, rhs, opts)
 end
 
-map("<ESC>", "<CMD>noh<CR>", {desc = "Escape and Clear hlsearch"})
+mapkey({"n", "v"}, "<ESC>", function() vim.cmd("nohlsearch") return "<ESC>" end, 
+  { expr = true, desc = "Escape and clear hlsearch" }
+)
+map("<leader>uL", "<CMD>Lazy<CR>", {desc = "Lazy"})
 --
 -- quit
 nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
