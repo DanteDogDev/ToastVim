@@ -46,12 +46,6 @@ nmap("<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
--- Disable
--- vim.keymap.del({'n','v'},"gra")
--- vim.keymap.del({'n','v'},"gri")
--- vim.keymap.del({'n','v'},"grn")
--- vim.keymap.del({'n','v'},"grr")
-
 -- toggle
 Snacks.toggle.diagnostics():map("<leader>ud")
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
