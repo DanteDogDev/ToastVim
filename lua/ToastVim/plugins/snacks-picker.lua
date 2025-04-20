@@ -12,7 +12,6 @@ return {
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
 
     -- find
-    { "<leader>f", "", desc = "Find" },
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
     { "<leader>fc", function() Snacks.picker.files({cwd = vim.fn.stdpath("config")}) end, desc = "Find Config File" },
@@ -22,7 +21,6 @@ return {
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
 
     -- git
-    { "<leader>g", "", desc = "Git" },
     { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
     { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
     { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
@@ -34,7 +32,6 @@ return {
     { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
 
     -- search
-    { "<leader>s", "", desc = "Search" },
     { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
     { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
     { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
