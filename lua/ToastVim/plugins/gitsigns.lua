@@ -1,5 +1,5 @@
 return {
-  "gitsigns.nvim",
+  "lewis6991/gitsigns.nvim",
   opts = function()
     Snacks.toggle({
       name = "Git Signs",
