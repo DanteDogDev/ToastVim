@@ -51,7 +51,7 @@ return {
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
           local buf_id = args.data.buf_id
-          vim.keymap.set("n", ".", toggle_dotfiles, { buffer = buf_id, desc = "Toggle hidden files" })
+          vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id, desc = "Toggle hidden files" })
           vim.keymap.set( "n", "gc", files_set_cwd, { buffer = args.data.buf_id, desc = "Set cwd" })
         end,
       })

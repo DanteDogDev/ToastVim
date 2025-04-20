@@ -17,12 +17,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       ToastVim.map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
     end
 
-    -- if client:supports_method('textDocument/references') then
-    --   map("grr", vim.lsp.buf.references, { desc = "References", buffer = args.buf })
-    -- end
-    -- if client:supports_method('textDocument/implementation') then
-    --   map("gri", vim.lsp.buf.implementation, { desc = "Implementation", buffer = args.buf })
-    -- end
     if client:supports_method('textDocument/rename') then
       ToastVim.map("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
     end
@@ -32,17 +26,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client:supports_method('textDocument/signatureHelp') then
       ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
     end
-
-    -- if client:supports_method('textDocument/definition') then
-    --   map("gd", vim.lsp.buf.definition, { desc = "Go to Definition", buffer = args.buf })
-    -- end
-    -- if client:supports_method('textDocument/declaration') then
-    --   map("gD", vim.lsp.buf.declaration, { desc = "Go to Declaration", buffer = args.buf })
-    -- end
-    -- if client:supports_method('textDocument/typeDefinition') then
-    --   map("gt", vim.lsp.buf.type_definition, { desc = "Go to Type Definition", buffer = args.buf })
-    -- end
-
     ToastVim.map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
   end,
 })
