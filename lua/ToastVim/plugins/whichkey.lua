@@ -9,6 +9,8 @@ return {
       { "<leader>g",  group = "Git", icon = {icon = ""} },
       { "<leader>u",  group = "Ui", },
       { "<leader>c",  group = "Code", },
+      { "[", group = "prev" },
+      { "]", group = "next" },
     },
   },
   keys = {
