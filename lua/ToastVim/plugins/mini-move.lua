@@ -1,5 +1,5 @@
 return {
   "echasnovski/mini.move",
-  event = "VeryLazy",
+  event = { "BufWritePost", "BufReadPost", "InsertLeave" },
   opts = {},
 }

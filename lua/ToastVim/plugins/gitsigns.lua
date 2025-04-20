@@ -7,7 +7,6 @@ return {
       local function map(mode, l, r, desc)
         vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
       end
-
       -- stylua: ignore start
       map("n", "]h", function()
         if vim.wo.diff then
