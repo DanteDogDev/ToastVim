@@ -1,6 +1,6 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  -- dependencies = { 'rafamadriz/friendly-snippets' },
   event = "InsertEnter",
 
   ---@module 'blink.cmp'
@@ -39,5 +39,4 @@ return {
       }
     }
   },
-  opts_extend = { "sources.default" }
 }

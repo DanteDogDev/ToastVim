@@ -1,6 +1,9 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    picker = {
+      layout = { layout = { position = "right" } },
+    },
     explorer = {}
   },
   keys = {
@@ -11,7 +14,7 @@ return {
     },
     {
       "<leader>fT",
-      function() Snacks.explorer({cwd = vim.uv.cwd()}) end,
+      function() Snacks.explorer({ cwd = vim.uv.cwd() }) end,
       desc = "File Tree (root dir)",
     },
   },
