@@ -4,6 +4,7 @@ return {
   opts = {
     preset = "helix",
     spec = {
+      { "<leader>?",  group = "WhichKey", icon = {icon = ""}},
       { "<leader>f",  group = "Find"},
       { "<leader>s",  group = "Search", },
       { "<leader>g",  group = "Git", icon = {icon = ""} },
@@ -14,6 +15,6 @@ return {
     },
   },
   keys = {
-    { "<leader>?", "<CMD>WhichKey<CR>", desc = "WhichKey", },
+    { "<leader>?", "<CMD>WhichKey<CR>", desc = "WhichKey"},
   },
 }

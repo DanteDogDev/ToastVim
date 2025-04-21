@@ -13,6 +13,7 @@ return {
 
     -- Linting
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+      group = "Linter",
       callback = function()
         lint.try_lint()
       end,

@@ -1,6 +1,11 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  keys = {
+    { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
+    { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+    { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
+  },
   opts = {
     on_attach = function(buffer)
       local gs = package.loaded.gitsigns
@@ -8,19 +13,14 @@ return {
         vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
       end
       map("n", "]h", function()
-        if vim.wo.diff then
-          vim.cmd.normal({ "]c", bang = true })
-        else
-          gs.nav_hunk("next")
-        end
+        if vim.wo.diff then vim.cmd.normal({ "]c", bang = true })
+        else gs.nav_hunk("next") end
       end, "Next Hunk")
       map("n", "[h", function()
-        if vim.wo.diff then
-          vim.cmd.normal({ "[c", bang = true })
-        else
-          gs.nav_hunk("prev")
-        end
+        if vim.wo.diff then vim.cmd.normal({ "[c", bang = true })
+        else gs.nav_hunk("prev") end
       end, "Prev Hunk")
+
       map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
       map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
 
