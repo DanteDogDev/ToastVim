@@ -20,38 +20,43 @@ return {
     { "<leader>fC", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
 
-    { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
     { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
 
     -- Grep
+    { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Grep Word", mode = { "n", "x" } },
 
     -- search
-    { "<leader>s<C-c>", function() Snacks.picker.cliphist() end, desc = "Clipboard History" },
-    { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
-    { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
-    { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
+    { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
+
     { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
-    { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
-    { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
-    { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+    { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
+    { "<leader>sc", function() Snacks.picker.commands() end, desc = "Commands" },
     { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
     { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
-    { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
-    { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+
+    { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
-    { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
     { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
-    { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
     { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
     { "<leader>su", function() Snacks.picker.undo() end, desc = "Undotree" },
+
+    { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
+    { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
+
+    -- FIXME: 
+    { "<leader>s<C-c>", function() Snacks.picker.cliphist() end, desc = "Clipboard History" },
+
+
     -- ui
     { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     -- LSP
+    { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+    { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },

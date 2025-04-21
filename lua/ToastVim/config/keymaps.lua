@@ -54,7 +54,9 @@ ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Win
 if vim.fn.executable("lazygit") == 1 then
   ToastVim.nmap("<leader>gg", function() Snacks.lazygit( { cwd = vim.fn.getcwd() }) end, { desc = "Lazygit (Root Dir)" })
   ToastVim.nmap("<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
-  ToastVim.nmap("<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
+  ToastVim.nmap("<leader>gh", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
+  --
+  -- TODO: whats the difference
   ToastVim.nmap("<leader>gl", function() Snacks.picker.git_log({ cwd = vim.fn.getcwd() }) end, { desc = "Git Log" })
   ToastVim.nmap("<leader>gL", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
 end

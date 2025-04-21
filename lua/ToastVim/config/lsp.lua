@@ -13,19 +13,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.buf.format({ bufnr = args.buf })
       end, { buffer = args.buf, desc = 'Format Buffer' })
     end
-    if client:supports_method('textDocument/codeAction') then
-      ToastVim.map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
-    end
 
-    if client:supports_method('textDocument/rename') then
-      ToastVim.map("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
-    end
-    if client:supports_method('textDocument/hover') then
-      ToastVim.map("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
-    end
-    if client:supports_method('textDocument/signatureHelp') then
-      ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
-    end
+    ToastVim.map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
+    ToastVim.map("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
+    ToastVim.map("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
+    ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
     ToastVim.map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
   end,
 })
