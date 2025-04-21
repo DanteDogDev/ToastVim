@@ -4,9 +4,6 @@ return {
     opts = {},
     priority = 1000,
     lazy = false,
-    keys = {
-
-    }
   },
   {
     "folke/snacks.nvim",
