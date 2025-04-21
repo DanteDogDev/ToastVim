@@ -1,29 +1,3 @@
-ToastVim.mapkey = function(mode, lhs, rhs, opts)
-  local options = { silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
-
-ToastVim.nmap = function(lhs, rhs, opts)
-  ToastVim.mapkey("n", lhs, rhs, opts)
-end
-
-ToastVim.vmap = function(lhs, rhs, opts)
-  ToastVim.mapkey("v", lhs, rhs, opts)
-end
-
-ToastVim.imap = function(lhs, rhs, opts)
-  ToastVim.mapkey("i", lhs, rhs, opts)
-end
-
-ToastVim.map = function(lhs, rhs, opts)
-  ToastVim.nmap(lhs, rhs, opts)
-  ToastVim.vmap(lhs, rhs, opts)
-end
-
-
 ToastVim.map("<ESC>", function()
     vim.cmd("nohlsearch")
     return "<ESC>"
@@ -52,13 +26,6 @@ ToastVim.nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Wind
 ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 if vim.fn.executable("lazygit") == 1 then
-  ToastVim.nmap("<leader>gg", function() Snacks.lazygit( { cwd = vim.fn.getcwd() }) end, { desc = "Lazygit (Root Dir)" })
-  ToastVim.nmap("<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
-  ToastVim.nmap("<leader>gh", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
-  --
-  -- TODO: whats the difference
-  ToastVim.nmap("<leader>gl", function() Snacks.picker.git_log({ cwd = vim.fn.getcwd() }) end, { desc = "Git Log" })
-  ToastVim.nmap("<leader>gL", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
 end
 
 -- toggle
