@@ -2,16 +2,15 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    picker = {
-    }
+    picker = {}
   },
   -- stylua: ignore
-  keys = { -- TODO: REWORK
+  keys = {
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>\\", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, -- TODO:
+    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, -- FIXME:
 
     -- find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
@@ -48,12 +47,9 @@ return {
     { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
     { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
 
-    -- FIXME: 
-    { "<leader>s<C-c>", function() Snacks.picker.cliphist() end, desc = "Clipboard History" },
-
-
     -- ui
     { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+
     -- LSP
     { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
     { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },

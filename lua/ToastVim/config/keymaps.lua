@@ -7,6 +7,7 @@ ToastVim.map("<ESC>", function()
 
 -- quit
 ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
+ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
 -- Goto start/end of line
 ToastVim.map("gh", "^", { desc = "Start of line" })
@@ -26,4 +27,5 @@ ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Win
 
 -- UI
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
+Snacks.toggle.inlay_hints():map("<leader>uh") -- TEST:
+Snacks.toggle.diagnostics():map("<leader>ud") -- TEST:

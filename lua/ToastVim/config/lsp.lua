@@ -19,9 +19,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     ToastVim.nmap("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
     ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
     ToastVim.nmap("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
-
-    Snacks.toggle.inlay_hints():map("<leader>uh") -- TEST:
-    Snacks.toggle.diagnostics():map("<leader>ud") -- TEST:
   end,
 })
 
