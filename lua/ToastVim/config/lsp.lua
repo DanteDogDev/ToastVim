@@ -9,16 +9,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if not client then return end
 
     if client:supports_method('textDocument/formatting') then
-      ToastVim.map('<leader>cf', function()
+      ToastVim.nmap('<leader>cf', function()
         vim.lsp.buf.format({ bufnr = args.buf })
       end, { buffer = args.buf, desc = 'Format Buffer' })
     end
 
-    ToastVim.map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
-    ToastVim.map("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
-    ToastVim.map("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
+    ToastVim.nmap("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
+    ToastVim.nmap("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
+    ToastVim.nmap("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
     ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
-    ToastVim.map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
+    ToastVim.nmap("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
+
+    Snacks.toggle.inlay_hints():map("<leader>uh") -- TEST:
+    Snacks.toggle.diagnostics():map("<leader>ud") -- TEST:
   end,
 })
 

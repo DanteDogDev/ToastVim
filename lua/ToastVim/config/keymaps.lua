@@ -4,7 +4,6 @@ ToastVim.map("<ESC>", function()
   end,
   { expr = true, desc = "Escape and clear hlsearch" }
 )
-ToastVim.map("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
 -- quit
 ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
@@ -25,10 +24,6 @@ ToastVim.nmap("<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height
 ToastVim.nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
-if vim.fn.executable("lazygit") == 1 then
-end
-
--- toggle
-Snacks.toggle.diagnostics():map("<leader>ud")
+-- UI
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-Snacks.toggle.inlay_hints():map("<leader>uh")
+ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
