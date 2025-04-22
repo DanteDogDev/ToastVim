@@ -1,6 +1,5 @@
 return {
   "folke/todo-comments.nvim",
-  cmd = { "TodoTrouble", "TodoTelescope" },
   event = { "BufWritePost", "BufReadPost", "InsertLeave" },
   opts = {},
   -- stylua: ignore

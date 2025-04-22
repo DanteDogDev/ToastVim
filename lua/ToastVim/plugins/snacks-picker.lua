@@ -2,17 +2,22 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    picker = {}
+    layout = { layout = { position = "right" } },
   },
   -- stylua: ignore
   keys = {
+    -- Explorer
+    { "<leader>ft", function() Snacks.explorer() end, desc = "File Tree", },
+    { "<leader>fT", function() Snacks.explorer({ cwd = vim.uv.cwd() }) end, desc = "File Tree (root dir)", },
+
+    -- Picker
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>\\", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, -- FIXME:
 
-    -- find
+    -- Find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
     { "<leader>fc", function() Snacks.picker.files({cwd = vim.fn.stdpath("config")}) end, desc = "Find Config File" },
@@ -28,7 +33,7 @@ return {
     { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Grep Word", mode = { "n", "x" } },
 
-    -- search
+    -- Search
     { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
 
     { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
@@ -47,7 +52,7 @@ return {
     { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
     { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
 
-    -- ui
+    -- UI
     { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
 
     -- LSP

@@ -37,7 +37,6 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
-
     cmdline = {
       completion = {
         ghost_text = {
