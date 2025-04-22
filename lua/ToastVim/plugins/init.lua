@@ -10,5 +10,9 @@ return {
     priority = 1000,
     lazy = false,
     opts = {},
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
   }
 }

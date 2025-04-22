@@ -10,6 +10,7 @@ local logo = [[
  ]]
 return {
   "snacks.nvim",
+  ---@type snacks.Config
   opts = {
     dashboard = {
       preset = {

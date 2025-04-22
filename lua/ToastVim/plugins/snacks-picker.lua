@@ -20,7 +20,7 @@ return {
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>\\", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, -- FIXME:
+    { "<leader>n", function() require("noice").cmd("all") end, desc = "Notification History" },
 
     -- Find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
