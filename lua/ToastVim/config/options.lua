@@ -26,7 +26,7 @@ vim.opt.showmode = false         -- Dont show mode since we have a statusline
 vim.opt.signcolumn = "yes"      -- Always show the signcolumn, otherwise it would shift the text each time
 vim.opt.confirm = true          -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true       -- Enable highlighting of the current line
-vim.o.winborder = 'rounded'
+vim.o.winborder = 'none'
 
 vim.opt.fillchars = {
   foldopen = "",
