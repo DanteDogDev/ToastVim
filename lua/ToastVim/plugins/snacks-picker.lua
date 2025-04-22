@@ -2,13 +2,18 @@ return {
   "folke/snacks.nvim",
   ---@type snacks.Config
   opts = {
-    layout = { layout = { position = "right" } },
+    picker = {
+      sources = {
+        explorer = {
+          layout = { layout = { position = "right" } },
+        }
+      }
+    }
   },
   -- stylua: ignore
   keys = {
     -- Explorer
     { "<leader>ft", function() Snacks.explorer() end, desc = "File Tree", },
-    { "<leader>fT", function() Snacks.explorer({ cwd = vim.uv.cwd() }) end, desc = "File Tree (root dir)", },
 
     -- Picker
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
