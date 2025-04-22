@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     ToastVim.nmap("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = args.buf })
     ToastVim.nmap("<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = args.buf })
-    ToastVim.nmap("K", vim.lsp.buf.hover, { desc = "Hover", buffer = args.buf })
+    ToastVim.nmap("K", function() vim.lsp.buf.hover({border = 'rounded'}) end, { desc = "Hover", buffer = args.buf})
     ToastVim.imap("<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help", buffer = args.buf })
     ToastVim.nmap("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics", buffer = args.buf })
   end,

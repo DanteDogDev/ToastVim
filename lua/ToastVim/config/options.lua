@@ -22,11 +22,11 @@ vim.opt.termguicolors = true    -- Enable 24-bit RGB colors
 vim.opt.list = true             -- Show some invisible characters (tabs...
 vim.opt.ruler = false           -- Disable the default ruler
 vim.opt.scrolloff = 8           -- Lines of context
-vim.opt.showmode = false         -- Dont show mode since we have a statusline
+vim.opt.showmode = false        -- Dont show mode since we have a statusline
 vim.opt.signcolumn = "yes"      -- Always show the signcolumn, otherwise it would shift the text each time
 vim.opt.confirm = true          -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true       -- Enable highlighting of the current line
-vim.o.winborder = 'none'
+-- vim.o.winborder = 'none'        -- Causes problems with plugins that dont set a winborder in their floats
 
 vim.opt.fillchars = {
   foldopen = "",
