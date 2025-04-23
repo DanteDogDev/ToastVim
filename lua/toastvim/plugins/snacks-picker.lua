@@ -70,5 +70,15 @@ return {
     { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
     { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+    -- Git
+    { "<leader>gh", function() Snacks.picker.git_log_file()  end, desc = "Current File History" },
+    { "<leader>gl", function() Snacks.picker.git_log({ cwd = vim.fn.getcwd() })end, desc = "Log" },
+    { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Diff" },
+    { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Status" },
+    { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Stash" },
+    { "<leader>gf", function() Snacks.picker.git_files() end, desc = "Tracked Files" },
+    { "<leader>gt", function() Snacks.picker.git_branches() end, desc = "Branches" },
+    { "<leader>gt", function() Snacks.picker.git_grep() end, desc = "Grep" },
   },
 }

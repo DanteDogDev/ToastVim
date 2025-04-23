@@ -7,4 +7,7 @@ return {
     quickfile = { enabled = true },
     indent = { enabled = true },
   },
+  keys = {
+    { "<leader>gg", function() Snacks.lazygit( { cwd = vim.fn.getcwd() })  end, desc = "Lazygit" },
+  },
 }

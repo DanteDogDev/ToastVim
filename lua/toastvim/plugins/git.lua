@@ -1,17 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufWritePost", "BufReadPost", "InsertLeave" },
-  keys = {
-    { "<leader>gg", function() Snacks.lazygit( { cwd = vim.fn.getcwd() })  end, desc = "Lazygit" },
-    { "<leader>gh", function() Snacks.picker.git_log_file()  end, desc = "Current File History" },
-    { "<leader>gl", function() Snacks.picker.git_log({ cwd = vim.fn.getcwd() })end, desc = "Log" },
-    { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Diff" },
-    { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Status" },
-    { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Stash" },
-    { "<leader>gf", function() Snacks.picker.git_files() end, desc = "Tracked Files" },
-    { "<leader>gt", function() Snacks.picker.git_branches() end, desc = "Branches" },
-    { "<leader>gt", function() Snacks.picker.git_grep() end, desc = "Grep" },
-  },
   opts = {
     signs = {
       add = { text = "▎" },
