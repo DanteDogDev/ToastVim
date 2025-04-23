@@ -25,15 +25,9 @@ ToastVim.template.insert = function(opts)
       end
     end
   end
-  if not tmp_dir then
-    print("Error: Template file '" .. opts .. "' not found.")
-    return
-  end
+  if not tmp_dir then return end
   local file = io.open(tmp_dir, "r")
-  if not file then
-    print("Error: Could not open file at " .. tmp_dir)
-    return
-  end
+  if not file then return end
   local contents = file:read("*all")
   file:close()
   if not contents or contents == "" then
@@ -73,6 +67,8 @@ local function get_templates()
   end
   return file_list
 end
+
+------------------------------------------------------------------------------------------------------------------------
 
 ToastVim.template.tmp_path = vim.fn.stdpath("config") .. "/templates"
 ToastVim.template.register('${FILENAME}', function() return vim.fn.expand('%:t:r') end)
