@@ -1,13 +1,15 @@
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  group = vim.api.nvim_create_augroup("ToastVim.yank.highlight", {}),
   callback = function()
     (vim.hl or vim.highlight).on_yank()
   end,
 })
 
 -- Load Lsp Keymaps into buffer
-vim.api.nvim_create_autocmd('LspAttach', {
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("ToastVim.lsp.attach",{}),
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if not client then return end

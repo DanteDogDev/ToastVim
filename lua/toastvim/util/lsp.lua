@@ -4,7 +4,7 @@
 ---@field action function          -- Function to execute
 ---@field opts? table              -- Options passed to `vim.keymap.set`
 ---@field has? string              -- Optional capability check (like "textDocument/formatting")
----@field ft? string               -- file type
+---@field ft? string|string[]               -- file type
 
 ToastVim.lsp = {}
 
