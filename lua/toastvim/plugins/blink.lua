@@ -1,9 +1,9 @@
 return {
-  'saghen/blink.cmp',
-  -- dependencies = { 'rafamadriz/friendly-snippets' },
+  "saghen/blink.cmp",
+  -- dependencies = { "rafamadriz/friendly-snippets" },
   event = "InsertEnter",
 
-  ---@module 'blink.cmp'
+  ---@module "blink.cmp"
   ---@type blink.cmp.Config
   opts = {
     -- All presets have the following mappings:
@@ -11,9 +11,9 @@ return {
     -- C-n/C-p or Up/Down: Select next/previous item
     -- C-e: Hide menu
     -- C-k: Toggle signature help (if signature.enabled = true)
-    keymap = { preset = 'super-tab' },
+    keymap = { preset = "super-tab" },
     appearance = {
-      nerd_font_variant = 'mono'
+      nerd_font_variant = "mono"
     },
     signature = {
       enabled = true,
@@ -39,7 +39,7 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { "lsp", "path", "snippets", "buffer" },
     },
     cmdline = {
       completion = {
