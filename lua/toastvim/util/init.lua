@@ -10,5 +10,5 @@ ToastVim = {
   }
 }
 require("snacks")
-require("ToastVim.util.lsp")
-require("ToastVim.util.keymaps")
+require("toastvim.util.lsp")
+require("toastvim.util.keymaps")
