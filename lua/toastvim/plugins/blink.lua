@@ -1,7 +1,13 @@
 return {
   "saghen/blink.cmp",
   -- dependencies = { "rafamadriz/friendly-snippets" },
-  event = "InsertEnter",
+  event = {"InsertEnter","CmdLineEnter"},
+  config = function(_,opts)
+    require("blink-cmp").setup(opts)
+
+    local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
+    vim.lsp.config("*", { capabilities = capabilities, })
+  end,
 
   ---@module "blink.cmp"
   ---@type blink.cmp.Config
