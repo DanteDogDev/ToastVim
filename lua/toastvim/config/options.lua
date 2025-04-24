@@ -55,11 +55,9 @@ vim.opt.listchars = {
 -----------------------------------------------------------
 -- Folding TODO:
 -----------------------------------------------------------
-vim.o.foldenable = true
+vim.o.foldenable = false
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
--- vim.opt.foldmethod = "marker" -- Enable folding (default 'foldmarker')
--- vim.o.foldmarker = "#pragma region,#pragma endregion"
 
 -----------------------------------------------------------
 -- Search && Highlights
