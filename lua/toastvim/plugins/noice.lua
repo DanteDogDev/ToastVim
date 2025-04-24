@@ -26,8 +26,8 @@ return {
     opts = {
       notifier = {
         enabled = true,
-        style = "minimal"
-      }
-    }
-  }
+        style = "minimal",
+      },
+    },
+  },
 }

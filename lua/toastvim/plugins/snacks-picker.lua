@@ -6,9 +6,9 @@ return {
       sources = {
         explorer = {
           layout = { layout = { position = "right" } },
-        }
-      }
-    }
+        },
+      },
+    },
   },
   -- stylua: ignore
   keys = {

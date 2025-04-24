@@ -1,9 +1,7 @@
 ToastVim.map("<ESC>", function()
-    vim.cmd("nohlsearch")
-    return "<ESC>"
-  end,
-  { expr = true, desc = "Escape and clear hlsearch" }
-)
+  vim.cmd("nohlsearch")
+  return "<ESC>"
+end, { expr = true, desc = "Escape and clear hlsearch" })
 
 -- quit
 ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })

@@ -5,13 +5,12 @@
 
 ToastVim = {
   lsp = {
-    keymaps = {
-    }
+    keymaps = {},
   },
   template = {
     expressions = {},
-    replacer = {}
-  }
+    replacer = {},
+  },
 }
 
 require("toastvim.util.lsp")

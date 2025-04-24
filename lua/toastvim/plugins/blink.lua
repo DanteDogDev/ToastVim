@@ -1,13 +1,13 @@
 return {
   "saghen/blink.cmp",
   -- dependencies = { "rafamadriz/friendly-snippets" },
-  event = { "BufWritePost", "BufReadPost", "InsertEnter","CmdLineEnter"},
-  config = function(_,opts)
+  event = { "BufWritePost", "BufReadPost", "InsertEnter", "CmdLineEnter" },
+  config = function(_, opts)
     require("blink-cmp").setup(opts)
     require("mason").setup()
 
     local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
-    vim.lsp.config("*", { capabilities = capabilities, })
+    vim.lsp.config("*", { capabilities = capabilities })
   end,
 
   ---@module "blink.cmp"
@@ -20,7 +20,7 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     keymap = { preset = "super-tab" },
     appearance = {
-      nerd_font_variant = "mono"
+      nerd_font_variant = "mono",
     },
     signature = {
       enabled = true,
@@ -28,8 +28,8 @@ return {
     completion = {
       accept = {
         auto_brackets = {
-          enabled = false
-        }
+          enabled = false,
+        },
       },
       documentation = {
         auto_show = true,
@@ -42,18 +42,18 @@ return {
         border = "rounded",
       },
       ghost_text = {
-        enabled = true
+        enabled = true,
       },
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
     },
     cmdline = {
       completion = {
         ghost_text = {
-          enabled = true
-        }
-      }
-    }
+          enabled = true,
+        },
+      },
+    },
   },
 }

@@ -71,11 +71,11 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 
 ToastVim.template.tmp_path = vim.fn.stdpath("config") .. "/templates"
-ToastVim.template.register('${FILENAME}', function() return vim.fn.expand('%:t:r') end)
-ToastVim.template.register('${DATE}', function() return os.date("%d/%m/%y") end)
-ToastVim.template.register('${AUTHOR}', function() return vim.fn.system("git config user.name"):gsub("\n", "") end)
-ToastVim.template.register('${EMAIL}', function() return vim.fn.system("git config user.email"):gsub("\n", "") end)
-ToastVim.template.register('${PROJECT}', function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end)
+ToastVim.template.register("${FILENAME}", function() return vim.fn.expand("%:t:r") end)
+ToastVim.template.register("${DATE}", function() return os.date("%d/%m/%y") end)
+ToastVim.template.register("${AUTHOR}", function() return vim.fn.system("git config user.name"):gsub("\n", "") end)
+ToastVim.template.register("${EMAIL}", function() return vim.fn.system("git config user.email"):gsub("\n", "") end)
+ToastVim.template.register("${PROJECT}", function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end)
 
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = vim.api.nvim_create_augroup("ToastVim.template", {}),
@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     local tpls = get_tpls()
     for _, tpl in ipairs(tpls) do
       local trimmed_tpl = tpl:sub(4)
-      if file_name:sub(- #trimmed_tpl) == trimmed_tpl then
+      if file_name:sub(-#trimmed_tpl) == trimmed_tpl then
         ToastVim.template.insert(tpl)
         return
       end

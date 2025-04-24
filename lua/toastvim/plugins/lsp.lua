@@ -9,7 +9,7 @@ return {
     opts = {},
     cmd = "Mason",
     keys = {
-      { "<leader>uM", "<CMD>Mason<CR>", desc = "Mason" }
+      { "<leader>uM", "<CMD>Mason<CR>", desc = "Mason" },
     },
   },
   -- FORMATTER
@@ -21,7 +21,13 @@ return {
       formatters_by_ft = {},
     },
     keys = {
-      { "<leader>cF", function() require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 1000, }) end, desc = "Format with injected lang" }
+      {
+        "<leader>cF",
+        function()
+          require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
+        end,
+        desc = "Format with injected lang",
+      },
     },
   },
   -- LINTER
@@ -29,7 +35,7 @@ return {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
     keys = {
-      { "<leader>cl", function() require("lint").try_lint() end, desc = "Lint Buffer" }
+      { "<leader>cl", function() require("lint").try_lint() end, desc = "Lint Buffer", },
     },
     opts = {
       -- When installing linter you need to set it here
@@ -41,7 +47,7 @@ return {
 
       -- Linting
       vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-        group = vim.api.nvim_create_augroup("ToastVim.lsp.linter",{}),
+        group = vim.api.nvim_create_augroup("ToastVim.lsp.linter", {}),
         callback = function()
           lint.try_lint()
         end,
@@ -56,7 +62,7 @@ return {
       library = {
         { "ToastVim" },
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-        { path = "snacks.nvim",        words = { "Snacks" } },
+        { path = "snacks.nvim", words = { "Snacks" } },
       },
     },
   },
@@ -64,7 +70,6 @@ return {
     "saghen/blink.cmp",
     opts = {
       sources = {
-        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
           lazydev = {
             name = "LazyDev",
@@ -74,5 +79,5 @@ return {
         },
       },
     },
-  }
+  },
 }
