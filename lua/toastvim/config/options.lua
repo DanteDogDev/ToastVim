@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
@@ -9,6 +11,14 @@ vim.opt.virtualedit = "block"                 -- Allow cursor to move where ther
 vim.opt.swapfile = false                  -- Don't use swapfile
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
+
+-----------------------------------------------------------
+-- Lsp
+-----------------------------------------------------------
+vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = { current_line = true },
+})
 
 -----------------------------------------------------------
 -- Neovim UI

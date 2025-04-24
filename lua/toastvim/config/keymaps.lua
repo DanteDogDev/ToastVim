@@ -24,8 +24,3 @@ ToastVim.nmap("<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" 
 ToastVim.nmap("<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 ToastVim.nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-
--- UI
-Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-Snacks.toggle.inlay_hints():map("<leader>uh") -- TEST:
-Snacks.toggle.diagnostics():map("<leader>ud") -- TEST:
