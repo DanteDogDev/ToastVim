@@ -4,6 +4,7 @@ return {
   event = {"InsertEnter","CmdLineEnter"},
   config = function(_,opts)
     require("blink-cmp").setup(opts)
+    require("mason").setup()
 
     local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
     vim.lsp.config("*", { capabilities = capabilities, })
