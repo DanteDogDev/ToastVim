@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-  event = { "BufWritePost", "BufReadPost", "InsertLeave" },
+  event = { "BufWritePost", "BufReadPost" },
   opts = {
     signs = {
       add = { text = "▎" },
@@ -17,6 +17,7 @@ return {
       topdelete = { text = "" },
       changedelete = { text = "▎" },
     },
+    -- stylua: ignore
     on_attach = function(buffer)
       local gs = package.loaded.gitsigns
       local function map(mode, l, r, desc)
@@ -37,8 +38,12 @@ return {
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
       Snacks.toggle({
         name = "Git Signs",
-        get = function() return require("gitsigns.config").config.signcolumn end,
-        set = function(state) require("gitsigns").toggle_signs(state) end,
+        get = function()
+          return require("gitsigns.config").config.signcolumn
+        end,
+        set = function(state)
+          require("gitsigns").toggle_signs(state)
+        end,
       }):map("<leader>uG")
     end,
   },
