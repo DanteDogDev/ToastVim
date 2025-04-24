@@ -7,16 +7,17 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     ensure_installed = {
-      "c",
-      "cpp",
-      "lua",
       "vim",
       "vimdoc",
       "query",
-      "markdown",
-      "markdown_inline",
       "regex",
       "bash",
+
+      "markdown",
+      "markdown-inline",
+      "html",
+      "typst",
+      "yaml",
     },
     auto_install = true,
   },
