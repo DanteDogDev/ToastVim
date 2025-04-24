@@ -1,7 +1,7 @@
 return {
   "saghen/blink.cmp",
   -- dependencies = { "rafamadriz/friendly-snippets" },
-  event = {"InsertEnter","CmdLineEnter"},
+  event = { "BufWritePost", "BufReadPost", "InsertEnter","CmdLineEnter"},
   config = function(_,opts)
     require("blink-cmp").setup(opts)
     require("mason").setup()
