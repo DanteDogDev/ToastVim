@@ -35,7 +35,13 @@ return {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
     keys = {
-      { "<leader>cl", function() require("lint").try_lint() end, desc = "Lint Buffer", },
+      {
+        "<leader>cl",
+        function()
+          require("lint").try_lint()
+        end,
+        desc = "Lint Buffer",
+      },
     },
     opts = {
       -- When installing linter you need to set it here
@@ -54,7 +60,17 @@ return {
       })
     end,
   },
-  -- lua specific
+
+  -- MARKDOWN HTML TYPST
+  {
+    "OXY2DEV/markview.nvim",
+    dependencies = {
+        "saghen/blink.cmp"
+    },
+    ft = { "markdown", "html", "yaml", "typst" },
+  },
+
+  -- LUA
   {
     "folke/lazydev.nvim",
     ft = "lua",
@@ -63,20 +79,6 @@ return {
         { "ToastVim" },
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
         { path = "snacks.nvim", words = { "Snacks" } },
-      },
-    },
-  },
-  {
-    "saghen/blink.cmp",
-    opts = {
-      sources = {
-        providers = {
-          lazydev = {
-            name = "LazyDev",
-            module = "lazydev.integrations.blink",
-            score_offset = 100,
-          },
-        },
       },
     },
   },
