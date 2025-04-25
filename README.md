@@ -9,6 +9,18 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 
 ## Requirements
 
+- tree-sitter-cli
+- curl
+- lua
+- lua51
+- luarocks
+- git
+- lazygit
+- fd
+- ripgrep
+- fzf
+- rust
+
 ## Installation
 
 [INSTALLATION](./INSTALLATION.md)

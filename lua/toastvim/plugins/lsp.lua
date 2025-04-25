@@ -65,9 +65,15 @@ return {
   {
     "OXY2DEV/markview.nvim",
     dependencies = {
-        "saghen/blink.cmp"
+      "saghen/blink.cmp",
     },
     ft = { "markdown", "html", "yaml", "typst" },
+    ---@class mkv.config
+    opts = {
+      preview = {
+        icon_provider = "mini",
+      },
+    },
   },
 
   -- LUA
@@ -79,6 +85,7 @@ return {
         { "ToastVim" },
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
         { path = "snacks.nvim", words = { "Snacks" } },
+        { path = "markview.nvim", words = { "mkv" } },
       },
     },
   },
