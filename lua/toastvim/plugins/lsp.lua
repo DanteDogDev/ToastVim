@@ -64,9 +64,6 @@ return {
   -- MARKDOWN HTML TYPST
   {
     "OXY2DEV/markview.nvim",
-    dependencies = {
-        "saghen/blink.cmp"
-    },
     ft = { "markdown", "html", "yaml", "typst" },
   },
 
