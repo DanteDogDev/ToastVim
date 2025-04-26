@@ -73,6 +73,11 @@ return {
         icon_provider = "mini",
       },
     },
+    config = function(_,opts)
+      require("markview").setup(opts)
+      require("markview.extras.checkboxes").setup()
+      require("markview.extras.editor").setup()
+    end
   },
 
   -- LUA

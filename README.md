@@ -9,7 +9,6 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 
 ## Requirements
 
-- tree-sitter-cli
 - curl
 - lua
 - lua51
@@ -20,6 +19,7 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - ripgrep
 - fzf
 - rust
+- tree-sitter-cli
 
 ## Lazy.nvim
 
