@@ -7,7 +7,7 @@
 
 
 ---@class ToastVim.Config
----@field lsp? ToastVim.LSPConfig    -- LSP configuration
+---@field lsp? ToastVim.LSPConfig
 ---@field template? ToastVim.TemplateConfig
 ---@field formatters_by_ft table
 ---@field linters_by_ft table

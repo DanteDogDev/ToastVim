@@ -17,7 +17,7 @@ return {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function(_, opts)
-      require("conform").setup({formatters_by_ft = ToastVim.formatters_by_ft})
+      require("conform").setup({ formatters_by_ft = ToastVim.formatters_by_ft })
     end,
     keys = {
       {
@@ -69,13 +69,13 @@ return {
     ft = { "markdown", "html", "yaml", "typst" },
     ---@class mkv.config
     opts = {
-      preview = {
-        icon_provider = "mini",
-      },
+      preview = { icon_provider = "mini", },
+      hybrid_modes = { "i", "n" },
+      code_blocks = {},
     },
-    config = function(_,opts)
+    config = function(_, opts)
       require("markview").setup(opts)
-    end
+    end,
   },
 
   -- LUA

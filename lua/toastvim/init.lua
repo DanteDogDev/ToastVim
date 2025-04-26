@@ -10,7 +10,7 @@ M.setup = function(opts)
         keymaps = {},
       },
       template = {
-        template_path = opts.template_path or vim.fn.stdpath("config") .. "/templates",
+        template_path = opts.template.template_path or vim.fn.stdpath("config") .. "/templates",
         expressions = {},
       },
     }
