@@ -63,25 +63,16 @@ return {
   -- MARKDOWN HTML TYPST
   {
     "OXY2DEV/markview.nvim",
+    branch = "dev",
     dependencies = {
       "saghen/blink.cmp",
+      "nvim-treesitter/nvim-treesitter",
     },
     ft = { "markdown", "html", "yaml", "typst" },
     ---@class mkv.config
-    opts = {
-      hybrid_mode = { "i", "n" },
-      ---@diagnostic disable-next-line: missing-fields
-      markdown = {
-        code_blocks = { 
-          enable = true, 
-          style = "block",
-        }
-      },
-      preview = {}
-    },
-    config = function(_, opts)
-      require("markview").setup(opts)
-    end,
+		keys = {
+			{ "<leader>cp", "<Cmd>Markview toggle<CR>", desc = "toggle markdown preview", ft = "markdown"}
+		},
   },
 
   -- LUA
