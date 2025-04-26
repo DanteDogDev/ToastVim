@@ -57,35 +57,35 @@ vim.list_extend(ToastVim.lsp.keymaps,
   {
     mode = "n",
     keys = "gd",
-    action = Snacks.picker.lsp_definitions,
+    action = function() Snacks.picker.lsp_definitions() end,
     opts = { desc = "Goto Definition" },
     has = "textDocument/definition"
   },
   {
     mode = "n",
     keys = "gD",
-    action = Snacks.picker.lsp_declarations,
+    action = function() Snacks.picker.lsp_declarations() end,
     opts = { desc = "Goto Declaration" },
     has = "textDocument/declaration"
   },
   {
     mode = "n",
     keys = "gr",
-    action = Snacks.picker.lsp_references,
+    action = function() Snacks.picker.lsp_references() end,
     opts = { desc = "Goto References" },
     has = "textDocument/references"
   },
   {
     mode = "n",
     keys = "gI",
-    action = Snacks.picker.lsp_implementations,
+    action = function() Snacks.picker.lsp_implementations() end,
     opts = { desc = "Goto Implementation" },
     has = "textDocument/implementation"
   },
   {
     mode = "n",
     keys = "gy",
-    action = Snacks.picker.lsp_type_definitions,
+    action = function() Snacks.picker.lsp_type_definitions() end,
     opts = { desc = "Goto Type Definition" },
     has = "textDocument/typeDefinition"
   },
