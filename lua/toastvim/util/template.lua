@@ -8,7 +8,7 @@ local parse = function(input)
 end
 
 ToastVim.template.insert = function(opts)
-  local dir = ToastVim.template.tmp_path
+  local dir = ToastVim.template.template_path
   local templates = vim.fn.globpath(dir, "**/*", true, true)
   local tmp_dir
   for _, template in ipairs(templates) do
@@ -45,7 +45,7 @@ ToastVim.template.insert = function(opts)
 end
 
 local function get_tpls()
-  local files = vim.fn.systemlist({ "fd", "--type", "f", ".", ToastVim.template.tmp_path })
+  local files = vim.fn.systemlist({ "fd", "--type", "f", ".", ToastVim.template.template_path })
   local file_list = {}
   for _, template in ipairs(files) do
     local filename = vim.fn.fnamemodify(template, ":t")
@@ -57,7 +57,7 @@ local function get_tpls()
 end
 
 local function get_templates()
-  local files = vim.fn.systemlist({ "fd", "--type", "f", ".", ToastVim.template.tmp_path })
+  local files = vim.fn.systemlist({ "fd", "--type", "f", ".", ToastVim.template.template_path })
   local file_list = {}
   for _, template in ipairs(files) do
     local filename = vim.fn.fnamemodify(template, ":t")

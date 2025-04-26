@@ -4,8 +4,8 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 
 ## Features
 
-- **Template**: File Template support with support for extra ${} with lua
 - **Toast**: TOAST!!!!
+- **Template**: File template support using expressions to autofill information
 
 ## Requirements
 
@@ -21,6 +21,29 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - fzf
 - rust
 
-## Installation
+## Lazy.nvim
 
-[INSTALLATION](./INSTALLATION.md)
+```lua
+return {
+  "DanteDogDev/ToastVim",
+  import = "toastvim.plugins",
+
+  ---@type ToastVim.Config
+  opts = {
+    formatters_by_ft = {
+      lua = { "stylua" },
+    },
+    linters_by_ft = {
+    },
+    template = {
+      expressions = {
+        ["${FILENAME}"] = function() return vim.fn.expand("%:t:r") end,
+        ["${DATE}"] = function() return os.date("%d/%m/%y") end,
+        ["${AUTHOR}"] = function() return vim.fn.system("git config user.name"):gsub("\n", "") end,
+        ["${EMAIL}"] = function() return vim.fn.system("git config user.email"):gsub("\n", "") end,
+        ["${PROJECT}"] = function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end,
+      },
+    },
+  },
+}
+```

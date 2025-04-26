@@ -3,10 +3,12 @@
 
 ---@class ToastVim.TemplateConfig
 ---@field expressions? table
+---@field template_path? string
 
 
 ---@class ToastVim.Config
 ---@field lsp? ToastVim.LSPConfig    -- LSP configuration
+---@field template? ToastVim.TemplateConfig
 ---@field formatters_by_ft table
 ---@field linters_by_ft table
 
