@@ -3,6 +3,13 @@ ToastVim.map("<ESC>", function()
   return "<ESC>"
 end, { expr = true, desc = "Escape and clear hlsearch" })
 
+
+-- Disable defaults
+pcall(vim.keymap.del, "n", "gra")
+pcall(vim.keymap.del, "n", "gri")
+pcall(vim.keymap.del, "n", "grn")
+pcall(vim.keymap.del, "n", "grr")
+
 -- quit
 ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })

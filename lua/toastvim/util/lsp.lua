@@ -23,12 +23,14 @@ vim.list_extend(ToastVim.lsp.keymaps,
     keys = "<leader>ca",
     action = vim.lsp.buf.code_action,
     opts = { desc = "Code Action" },
+    has = "textDocument/codeAction",
   },
   {
     mode = "n",
     keys = "<leader>cr",
     action = vim.lsp.buf.rename,
     opts = { desc = "Rename" },
+    has = "textDocument/rename"
   },
   {
     mode = "n",
@@ -37,12 +39,14 @@ vim.list_extend(ToastVim.lsp.keymaps,
       vim.lsp.buf.hover({ border = "rounded" })
     end,
     opts = { desc = "Hover" },
+    has = "textDocument/hover"
   },
   {
     mode = "i",
     keys = "<C-k>",
     action = vim.lsp.buf.signature_help,
     opts = { desc = "Signature Help" },
+    has = "textDocument/signatureHelp"
   },
   {
     mode = "n",
@@ -50,4 +54,45 @@ vim.list_extend(ToastVim.lsp.keymaps,
     action = vim.diagnostic.open_float,
     opts = { desc = "Line Diagnostics" },
   },
+  {
+    mode = "n",
+    keys = "gd",
+    action = function() Snacks.picker.lsp_definitions() end,
+    opts = { desc = "Goto Definition" },
+    has = "textDocument/definition"
+  },
+  {
+    mode = "n",
+    keys = "gD",
+    action = function() Snacks.picker.lsp_declarations() end,
+    opts = { desc = "Goto Declaration" },
+    has = "textDocument/declaration"
+  },
+  {
+    mode = "n",
+    keys = "gr",
+    action = function() Snacks.picker.lsp_references() end,
+    opts = { desc = "Goto References" },
+    has = "textDocument/references"
+  },
+  {
+    mode = "n",
+    keys = "gI",
+    action = function() Snacks.picker.lsp_implementations() end,
+    opts = { desc = "Goto Implementation" },
+    has = "textDocument/implementation"
+  },
+  {
+    mode = "n",
+    keys = "gy",
+    action = function() Snacks.picker.lsp_type_definitions() end,
+    opts = { desc = "Goto Type Definition" },
+    has = "textDocument/typeDefinition"
+  },
 })
+
+    -- { "gd", function() () end, desc = "Goto Definition" },
+    -- { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
+    -- { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+    -- { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+    -- { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
