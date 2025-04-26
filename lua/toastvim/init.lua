@@ -6,7 +6,15 @@ M.setup = function(opts)
   require("toastvim.config")
 
   if opts.lsp and opts.lsp.keymaps then
-    ToastVim = vim.tbl_deep_extend("force", ToastVim.lsp.keymaps, opts.lsp.keymaps)
+    if opts.lsp.keymaps then
+      ToastVim = vim.tbl_deep_extend("force", ToastVim.lsp.keymaps, opts.lsp.keymaps)
+    end
+    if opts.lsp.formatters_by_ft then
+      ToastVim = vim.tbl_deep_extend("force", ToastVim.lsp.keymaps, opts.lsp.formatters_by_ft)
+    end
+    if opts.lsp.linters_by_ft then
+      ToastVim = vim.tbl_deep_extend("force", ToastVim.lsp.keymaps, opts.lsp.linters_by_ft)
+    end
   end
 end
 

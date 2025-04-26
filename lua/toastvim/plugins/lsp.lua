@@ -18,7 +18,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       -- When installing formatter you need to set it here
-      formatters_by_ft = {},
+      formatters_by_ft = ToastVim.formatters_by_ft,
     },
     keys = {
       {
@@ -45,11 +45,11 @@ return {
     },
     opts = {
       -- When installing linter you need to set it here
-      linters_by_ft = {},
+      -- linters_by_ft = {},
     },
     config = function(_, opts)
       local lint = require("lint")
-      lint.linters_by_ft = opts.linters_by_ft
+      lint.linters_by_ft = ToastVim.linters_by_ft
 
       -- Linting
       vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

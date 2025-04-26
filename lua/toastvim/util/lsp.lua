@@ -6,8 +6,6 @@
 ---@field has? string              -- Optional capability check (like "textDocument/formatting")
 ---@field ft? string|string[]               -- file type
 
-ToastVim.lsp = {}
-
 ---@type ToastVim.LspKeymap[]
 ToastVim.lsp.keymaps = {
   {
