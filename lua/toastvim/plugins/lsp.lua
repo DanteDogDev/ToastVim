@@ -69,9 +69,15 @@ return {
     ft = { "markdown", "html", "yaml", "typst" },
     ---@class mkv.config
     opts = {
-      preview = { icon_provider = "mini", },
-      hybrid_modes = { "i", "n" },
-      code_blocks = {},
+      hybrid_mode = { "i", "n" },
+      ---@diagnostic disable-next-line: missing-fields
+      markdown = {
+        code_blocks = { 
+          enable = true, 
+          style = "block",
+        }
+      },
+      preview = {}
     },
     config = function(_, opts)
       require("markview").setup(opts)

@@ -7,18 +7,20 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - **Toast**: TOAST!!!!
 - **Template**: File template support using expressions to autofill information
 
-## Requirements
+## Requirements WIP
 
-- curl
 - lua
 - lua51
 - luarocks
+
 - git
 - lazygit
+
 - fd
 - ripgrep
 - fzf
-- rust
+
+- curl
 - tree-sitter-cli
 
 ## Lazy.nvim
