@@ -6,8 +6,9 @@
 ---@field has? string              -- Optional capability check (like "textDocument/formatting")
 ---@field ft? string|string[]               -- file type
 
+vim.list_extend(ToastVim.lsp.keymaps,
 ---@type ToastVim.LspKeymap[]
-ToastVim.lsp.keymaps = {
+{
   {
     mode = "n",
     keys = "<leader>cf",
@@ -49,4 +50,4 @@ ToastVim.lsp.keymaps = {
     action = vim.diagnostic.open_float,
     opts = { desc = "Line Diagnostics" },
   },
-}
+})

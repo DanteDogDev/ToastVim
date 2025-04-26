@@ -16,10 +16,9 @@ return {
   {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      -- When installing formatter you need to set it here
-      formatters_by_ft = ToastVim.formatters_by_ft,
-    },
+    config = function(_, opts)
+      require("conform").setup({formatters_by_ft = ToastVim.formatters_by_ft})
+    end,
     keys = {
       {
         "<leader>cF",

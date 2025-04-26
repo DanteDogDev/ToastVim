@@ -1,8 +1,4 @@
 ---@diagnostic disable: duplicate-set-field
-ToastVim.template.register = function(expr, replacer)
-  ToastVim.template.expressions[expr] = replacer
-end
-
 local parse = function(input)
   for expr, replacer in pairs(ToastVim.template.expressions) do
     local replace = replacer()
@@ -25,9 +21,13 @@ ToastVim.template.insert = function(opts)
       end
     end
   end
-  if not tmp_dir then return end
+  if not tmp_dir then
+    return
+  end
   local file = io.open(tmp_dir, "r")
-  if not file then return end
+  if not file then
+    return
+  end
   local contents = file:read("*all")
   file:close()
   if not contents or contents == "" then
@@ -68,22 +68,27 @@ local function get_templates()
   return file_list
 end
 
+vim.api.nvim_create_user_command("Template", function(opts)
+  ToastVim.template.insert(opts.args)
+end, {
+  nargs = 1,
+  ---@diagnostic disable-next-line: unused-local
+  complete = function(arglead, cmdline, cursorpos)
+    return get_templates()
+  end,
+})
+
 ------------------------------------------------------------------------------------------------------------------------
 
-ToastVim.template.tmp_path = vim.fn.stdpath("config") .. "/templates"
-ToastVim.template.register("${FILENAME}", function() return vim.fn.expand("%:t:r") end)
-ToastVim.template.register("${DATE}", function() return os.date("%d/%m/%y") end)
-ToastVim.template.register("${AUTHOR}", function() return vim.fn.system("git config user.name"):gsub("\n", "") end)
-ToastVim.template.register("${EMAIL}", function() return vim.fn.system("git config user.email"):gsub("\n", "") end)
-ToastVim.template.register("${PROJECT}", function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end)
-
-vim.api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
   group = vim.api.nvim_create_augroup("ToastVim.template", {}),
   callback = function()
     local file_name = vim.fn.expand("%:t")
     local file_path = vim.fn.expand("%:p")
     local file_size = vim.fn.getfsize(file_path)
-    if file_size ~= 0 then return end
+    if file_size ~= 0 then
+      return
+    end
     local tpls = get_tpls()
     for _, tpl in ipairs(tpls) do
       local trimmed_tpl = tpl:sub(4)
@@ -92,15 +97,5 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         return
       end
     end
-  end,
-})
-
-vim.api.nvim_create_user_command("Template", function(opts)
-  ToastVim.template.insert(opts.args)
-end, {
-  nargs = 1,
-  ---@diagnostic disable-next-line: unused-local
-  complete = function(arglead, cmdline, cursorpos)
-    return get_templates()
   end,
 })
