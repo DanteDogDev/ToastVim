@@ -72,6 +72,7 @@ return {
 <details><summary>opts</summary>
 
 ```lua
+---@type ToastVim.Config
 opts = {
     formatters_by_ft = {
         lua = { "stylua" },
