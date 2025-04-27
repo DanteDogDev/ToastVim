@@ -2,6 +2,8 @@
 
 Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!!
 
+![Toast](./toast.jpg)
+
 ## Features
 
 - **Toast**: TOAST!!!!
@@ -54,5 +56,3 @@ return {
   },
 }
 ```
-
-![Toast](./toast.jpg)
