@@ -1,7 +1,7 @@
 ---@class ToastVim.LspKeymap
 ---@field mode string|string[]     -- Mode(s) like "n", "i", "v", etc.
 ---@field keys string              -- Keybinding
----@field action function          -- Function to execute
+---@field action function|string          -- Function to execute
 ---@field opts? table              -- Options passed to `vim.keymap.set`
 ---@field has? string              -- Optional capability check (like "textDocument/formatting")
 ---@field ft? string|string[]               -- file type

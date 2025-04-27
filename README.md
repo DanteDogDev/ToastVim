@@ -7,7 +7,7 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 ## Features
 
 - **Toast**: TOAST!!!!
-- **Template**: File template support using expressions to autofill information
+- **Template**: File template support using expressions to auto fill information
 
 ## Requirements
 
@@ -30,12 +30,12 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - tectonic
 - ghostscript
 
+
 </details>
 
 ## Installation
 
-<details>
-<summary>Lazy.nvim</summary>
+<details><summary>Lazy.nvim</summary>
 
 ```lua
 -- Good basic setup
@@ -67,10 +67,9 @@ return {
 
 </details>
 
-## opts
+## Configuration
 
-<details>
-<summary>opts</summary>
+<details><summary>opts</summary>
 
 ```lua
 opts = {
@@ -81,14 +80,7 @@ opts = {
     },
     lsp = {
         keymaps = {
-          {
-            mode = "n",
-            keys = "",
-            action = function()
-            end,
-            opts = { desc = "" },
-            has = "textDocument/...",
-          },
+            { mode = "n", keys = "<leader>ch", action = "<CMD>LspClangdSwitchSourceHeader<CR>", opts = {desc = "Switch to Source Header"}, ft = {"cpp","c"}},
         },
     },
     template = {
