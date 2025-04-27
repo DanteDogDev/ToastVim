@@ -6,19 +6,32 @@ return {
   ---@type TSConfig
   ---@diagnostic disable-next-line: missing-fields
   opts = {
+    auto_install = true,
+    highlight = { enable = true },
     ensure_installed = {
       "vim",
       "vimdoc",
       "query",
       "regex",
       "bash",
+      "lua",
 
       "markdown",
-      "markdown-inline",
+      "markdown_inline",
       "html",
       "typst",
       "yaml",
+
+      "css",
+      "javascript",
+      "norg",
+      "scss",
+      "svelte",
+      "tsx",
+      "vue",
     },
-    auto_install = true,
   },
+  config = function(_,opts)
+    require("nvim-treesitter.configs").setup(opts)
+  end
 }

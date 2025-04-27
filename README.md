@@ -20,8 +20,13 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - ripgrep
 - fzf
 
+- nodejs
+- npm
 - curl
 - tree-sitter-cli
+
+- tectonic
+- ghostscript
 
 ## Lazy.nvim
 
@@ -50,3 +55,4 @@ return {
 }
 ```
 
+![Toast](./toast.jpg)

@@ -42,10 +42,7 @@ return {
         desc = "Lint Buffer",
       },
     },
-    opts = {
-      -- When installing linter you need to set it here
-      -- linters_by_ft = {},
-    },
+    opts = {},
     config = function(_, opts)
       local lint = require("lint")
       lint.linters_by_ft = ToastVim.linters_by_ft
@@ -70,9 +67,10 @@ return {
     },
     ft = { "markdown", "html", "yaml", "typst" },
     ---@class mkv.config
-		keys = {
-			{ "<leader>cp", "<Cmd>Markview toggle<CR>", desc = "toggle markdown preview", ft = "markdown"}
-		},
+    keys = {
+      { "<leader>um", "<Cmd>Markview toggle<CR>", desc = "toggle Render Markdown", ft = "markdown"}
+    },
+    opts = {},
   },
 
   -- LUA
