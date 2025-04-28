@@ -4,12 +4,12 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 
 ![Toast](./toast.jpg)
 
-## Features
+## ✨ Features
 
 - **Toast**: TOAST!!!!
 - **Template**: File template support using expressions to auto fill information
 
-## Requirements
+## ⚡️ Requirements
 
 <details>
 <summary>Dependences</summary>
@@ -33,50 +33,36 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 
 </details>
 
-## Installation
+## 📦 Installation
 
 <details><summary>Lazy.nvim</summary>
 
 ```lua
--- Good basic setup
 return {
   "DanteDogDev/ToastVim",
   import = "toastvim.plugins",
 
   ---@type ToastVim.Config
-  opts = {
-    -- Gets piped into conform.nvim
-    formatters_by_ft = {
-      lua = { "stylua" },
-    },
-    -- Gets piped into nvim-lint
-    linters_by_ft = {
-    },
-    template = {
-      expressions = {
-        ["${FILENAME}"] = function() return vim.fn.expand("%:t:r") end,
-        ["${DATE}"] = function() return os.date("%d/%m/%y") end,
-        ["${AUTHOR}"] = function() return vim.fn.system("git config user.name"):gsub("\n", "") end,
-        ["${EMAIL}"] = function() return vim.fn.system("git config user.email"):gsub("\n", "") end,
-        ["${PROJECT}"] = function() return vim.fn.system('powershell -Command "Split-Path -Leaf (Get-Location)"'):gsub("\n", "") end,
-      },
-    },
-  },
+  opts = {},
 }
 ```
 
 </details>
 
-## Configuration
+## ⚙️ Configuration
 
 <details><summary>opts</summary>
 
 ```lua
+-- Good Example
+
 ---@type ToastVim.Config
 opts = {
+    -- Gets piped into conform.nvim
     formatters_by_ft = {
         lua = { "stylua" },
     },
+    -- Gets piped into nvim-lint
     linters_by_ft = {
     },
     lsp = {
