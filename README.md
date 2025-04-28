@@ -66,6 +66,7 @@ opts = {
     linters_by_ft = {
     },
     lsp = {
+        -- keymaps that will be loaded on lsp attach
         keymaps = {
             { mode = "n", keys = "<leader>ch", action = "<CMD>LspClangdSwitchSourceHeader<CR>", opts = {desc = "Switch to Source Header"}, ft = {"cpp","c"}},
         },

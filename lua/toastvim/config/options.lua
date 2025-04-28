@@ -53,7 +53,7 @@ vim.opt.listchars = {
 }
 
 -----------------------------------------------------------
--- Folding TODO:
+-- Folding
 -----------------------------------------------------------
 vim.o.foldenable = false
 vim.o.foldmethod = "expr"
