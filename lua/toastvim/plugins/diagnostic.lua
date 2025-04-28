@@ -7,8 +7,6 @@ return {
       { "<leader>xd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics" },
       { "<leader>xD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics" },
 
-      -- { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" }, -- idk
-      -- { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" }, -- idk what this does
       {
         "[q",
         function()
@@ -39,7 +37,7 @@ return {
       },
     },
   },
-  { -- TODO:
+  {
     "folke/todo-comments.nvim",
     event = { "BufWritePost", "BufReadPost", "InsertLeave" },
     opts = {},
@@ -51,5 +49,5 @@ return {
       { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo" },
       { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme" },
     },
-  }, -- TODO:
+  },
 }
