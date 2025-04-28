@@ -68,7 +68,7 @@ return {
     ft = { "markdown", "html", "yaml", "typst" },
     ---@class mkv.config
     keys = {
-      { "<leader>um", "<Cmd>Markview toggle<CR>", desc = "toggle Render Markdown", ft = "markdown"}
+      { "<leader>um", "<Cmd>Markview toggle<CR>", desc = "toggle Render Markdown", ft = "markdown" },
     },
     opts = {},
   },
