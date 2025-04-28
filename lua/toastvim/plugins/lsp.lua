@@ -3,6 +3,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      { "<leader>sL", function() Snacks.picker.lsp_config() end, desc = "Lsp Info" },
+    },
   },
   {
     "williamboman/mason.nvim",

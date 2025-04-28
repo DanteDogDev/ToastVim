@@ -2,8 +2,7 @@ local M = {}
 
 ---@param opts ToastVim.Config
 M.setup = function(opts)
-  ToastVim = ToastVim
-    or {
+  ToastVim = {
       linters_by_ft = {},
       formatters_by_ft = {},
       lsp = {

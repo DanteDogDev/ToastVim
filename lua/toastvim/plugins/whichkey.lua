@@ -11,6 +11,8 @@ return {
       { "<leader>u", group = "Ui" },
       { "<leader>c", group = "Code" },
       { "<leader>x", group = "quickfix", icon = { icon = "󱖫 ", color = "green" } },
+      { "<leader>b", group = "buffer", },
+      { "z", group = "fold" },
       { "[", group = "prev" },
       { "]", group = "next" },
     },
