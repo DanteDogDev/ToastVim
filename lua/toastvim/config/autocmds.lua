@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       ---@diagnostic disable-next-line: param-type-mismatch
       if (not map.ft or vim.tbl_contains(map.ft, ft)) and (not map.has or client:supports_method(map.has)) then
         local opts = vim.tbl_extend("force", { buffer = args.buf }, map.opts or {})
-        ToastVim.mapkey(map.mode, map.keys, map.action, opts)
+        ToastVim.map(map.mode, map.keys, map.action, opts)
       end
     end
   end,

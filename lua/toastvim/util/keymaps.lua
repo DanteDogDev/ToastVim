@@ -1,4 +1,4 @@
-ToastVim.mapkey = function(mode, lhs, rhs, opts)
+ToastVim.map = function(mode, lhs, rhs, opts)
   local options = { silent = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
@@ -7,18 +7,18 @@ ToastVim.mapkey = function(mode, lhs, rhs, opts)
 end
 
 ToastVim.nmap = function(lhs, rhs, opts)
-  ToastVim.mapkey("n", lhs, rhs, opts)
+  ToastVim.map("n", lhs, rhs, opts)
 end
 
 ToastVim.vmap = function(lhs, rhs, opts)
-  ToastVim.mapkey("v", lhs, rhs, opts)
+  ToastVim.map("v", lhs, rhs, opts)
 end
 
 ToastVim.imap = function(lhs, rhs, opts)
-  ToastVim.mapkey("i", lhs, rhs, opts)
+  ToastVim.map("i", lhs, rhs, opts)
 end
 
-ToastVim.map = function(lhs, rhs, opts)
+ToastVim.nvmap = function(lhs, rhs, opts)
   ToastVim.nmap(lhs, rhs, opts)
   ToastVim.vmap(lhs, rhs, opts)
 end

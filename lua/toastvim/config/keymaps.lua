@@ -1,4 +1,4 @@
-ToastVim.map("<ESC>", function()
+ToastVim.nvmap("<ESC>", function()
   vim.cmd("nohlsearch")
   return "<ESC>"
 end, { expr = true, desc = "Escape and clear hlsearch" })
@@ -15,8 +15,8 @@ ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
 -- Goto start/end of line
-ToastVim.map("gh", "^", { desc = "Start of line" })
-ToastVim.map("gl", "$", { desc = "End of line" })
+ToastVim.nvmap("gh", "^", { desc = "Start of line" })
+ToastVim.nvmap("gl", "$", { desc = "End of line" })
 
 -- Move to window using the <ctrl> hjkl keys
 ToastVim.nmap("<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
@@ -29,3 +29,15 @@ ToastVim.nmap("<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" 
 ToastVim.nmap("<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 ToastVim.nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- Quickfix List
+ToastVim.nmap("<leader>xq",
+function()
+  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Quickfix List" })
+
+ToastVim.nmap("[q", vim.cmd.cprev, { desc = "Previous Quickfix" }) -- Gets overridden by trouble.nvim
+ToastVim.nmap("]q", vim.cmd.cnext, { desc = "Next Quickfix" })
