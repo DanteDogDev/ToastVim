@@ -26,6 +26,7 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - nodejs
 - npm
 - curl
+- rust
 - tree-sitter-cli
 - tectonic
 - ghostscript
