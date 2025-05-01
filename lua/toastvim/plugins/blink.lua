@@ -28,7 +28,7 @@ return {
     completion = {
       accept = {
         auto_brackets = {
-          enabled = false, -- MAYBE BRING THIS BACK
+          enabled = true,
         },
       },
       documentation = {
