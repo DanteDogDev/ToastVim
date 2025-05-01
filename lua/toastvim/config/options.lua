@@ -7,7 +7,7 @@ vim.g.maplocalleader = "\\"
 vim.opt.mouse = "a" -- Enable mouse support
 vim.opt.clipboard = "unnamedplus" -- Copy/paste to system clipboard
 vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-vim.opt.swapfile = false -- Don't use swapfile
+vim.opt.swapfile = true
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 
