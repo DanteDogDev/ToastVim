@@ -14,6 +14,9 @@ pcall(vim.keymap.del, "n", "grr")
 ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
+-- Deleting
+ToastVim.nvmap("x", '"_x')
+
 -- Goto start/end of line
 ToastVim.nvmap("gh", "^", { desc = "Start of line" })
 ToastVim.nvmap("gl", "$", { desc = "End of line" })
