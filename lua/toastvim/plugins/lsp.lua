@@ -24,11 +24,11 @@ return {
     end,
     keys = {
       {
-        "<leader>cF",
+        "<leader>cf",
         function()
           require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
         end,
-        desc = "Format with injected lang",
+        desc = "Format Buffer",
       },
     },
   },

@@ -12,15 +12,6 @@ vim.list_extend(
   {
     {
       mode = "n",
-      keys = "<leader>cf",
-      action = function()
-        vim.lsp.buf.format()
-      end,
-      opts = { desc = "Format Buffer" },
-      has = "textDocument/formatting",
-    },
-    {
-      mode = "n",
       keys = "<leader>ca",
       action = vim.lsp.buf.code_action,
       opts = { desc = "Code Action" },
