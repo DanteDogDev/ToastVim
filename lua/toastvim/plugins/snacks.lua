@@ -6,8 +6,8 @@ return {
     bigfile = { enabled = true },
     quickfile = { enabled = true },
     indent = { enabled = true },
-    image = { enabled = true },
     words = { enabled = true },
+    -- image = { enabled = true },
   },
   keys = {
     { "<leader>gg", function() Snacks.lazygit({ cwd = vim.fn.getcwd() }) end, desc = "Lazygit", },
