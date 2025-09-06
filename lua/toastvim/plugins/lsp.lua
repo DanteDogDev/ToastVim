@@ -60,40 +60,6 @@ return {
     end,
   },
 
-  -- MARKDOWN HTML TYPST
-  -- {
-  --   "OXY2DEV/markview.nvim",
-  --   branch = "dev",
-  --   dependencies = {
-  --     "saghen/blink.cmp",
-  --     "nvim-treesitter/nvim-treesitter",
-  --   },
-  --   ft = { "markdown", "html", "yaml", "typst" },
-  --   keys = {
-  --     { "<leader>um", "<Cmd>Markview toggle<CR>", desc = "toggle Render Markdown", ft = "markdown" },
-  --   },
-  --   ---@class mkv.config
-  --   opts = {
-  --     latex = {
-  --       enable = false,
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  --   ft = { "markdown" },
-  --   build = "cd app && yarn install",
-  --   keys = {
-  --     {
-  --       "<leader>cp",
-  --       ft = "markdown",
-  --       "<cmd>MarkdownPreviewToggle<cr>",
-  --       desc = "Markdown Preview",
-  --     },
-  --   },
-  -- },
-
   -- LUA
   {
     "folke/lazydev.nvim",
