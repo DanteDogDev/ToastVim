@@ -16,11 +16,12 @@ return {
     { "<leader>ft", function() Snacks.explorer() end, desc = "File Tree", },
 
     -- Picker
+    { "<leader><leader>", function() Snacks.picker.smart() end, desc = "Smart Search" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>\\", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>n", function() require("noice").cmd("all") end, desc = "Notification History" },
+    -- { "<leader>n", function() require("noice").cmd("all") end, desc = "Notification History" },
 
     -- Find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
