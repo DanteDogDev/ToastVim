@@ -20,8 +20,9 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     keymap = {
       preset = "default",
-      ['<Tab>'] = false,
-      ['<S-Tab>'] = false,
+      ["<Tab>"] = false,
+      ["<S-Tab>"] = false,
+    },
     appearance = {
       nerd_font_variant = "mono",
     },
