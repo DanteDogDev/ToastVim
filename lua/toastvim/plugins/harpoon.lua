@@ -2,9 +2,9 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
-  opts = {},
+  -- stylua: ignore
   keys = {
-    { "<leader><S-h>", function() Harpoon:list():add() end, desc = "Harpoon File", },
+    { "-", function() Harpoon:list():add() end, desc = "Harpoon File", },
     { "<leader>h", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Harpoon Quick Menu", },
     { "<M-n>", function() Harpoon:list():next() end, desc = "Harpoon Next", },
     { "<M-p>", function() Harpoon:list():prev() end, desc = "Harpoon Prev", },
@@ -21,12 +21,12 @@ return {
     { "<M-0>", function() Harpoon:list():select(10) end, desc = "Harpoon 10", },
   },
 
-  config = function(_, opts)
+  config = function()
     Harpoon = require("harpoon")
-    Harpoon:setup(opts)
+    Harpoon:setup({settings = {save_on_toggle = true}})
 
     local extensions = require("harpoon.extensions")
     Harpoon:extend(extensions.builtins.highlight_current_file())
-    Harpoon:extend(extensions.builtins.navigate_with_number());
-  end
+    Harpoon:extend(extensions.builtins.navigate_with_number())
+  end,
 }
