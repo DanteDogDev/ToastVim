@@ -26,7 +26,6 @@ return {
   config = function()
     filename_fn = require("lualine.components.filename"):extend()
     local highlight = require("lualine.highlight")
-    local theme = require("lualine.themes.auto")
     function filename_fn:init(options)
       filename_fn.super.init(self, options)
       self.status_colors = {
@@ -67,9 +66,9 @@ return {
             return mode_map[s] or s
           end,
         } },
-        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_b = { "branch"},
         lualine_c = { filename_fn },
-        lualine_x = { { macro_status, color = "WarningMsg" } },
+        lualine_x = { { macro_status, color = "WarningMsg" },"diagnostics" },
         lualine_y = { "lsp_status" },
         lualine_z = { "location" },
       },
