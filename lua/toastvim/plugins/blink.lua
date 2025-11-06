@@ -22,6 +22,7 @@ return {
       preset = "default",
       ["<Tab>"] = false,
       ["<S-Tab>"] = false,
+      ["<C-CR>"] = { "accept" },
     },
     appearance = {
       nerd_font_variant = "mono",
