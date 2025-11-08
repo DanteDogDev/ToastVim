@@ -85,6 +85,9 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
   callback = function()
     local file_name = vim.fn.expand("%:t")
     local file_path = vim.fn.expand("%:p")
+    if file_path == "" or file_path == "/" then
+      return
+    end
     local file_size = vim.fn.getfsize(file_path)
     if file_size ~= 0 then
       return
