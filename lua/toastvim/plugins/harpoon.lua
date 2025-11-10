@@ -4,8 +4,8 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   -- stylua: ignore
   keys = {
-    { "-", function() Harpoon:list():add() end, desc = "Harpoon File", },
-    { "<leader>h", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Harpoon Quick Menu", },
+    { "<M-=>", function() Harpoon:list():add() end, desc = "Harpoon File", },
+    { "<M-->", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Harpoon Quick Menu", },
     { "<M-n>", function() Harpoon:list():next() end, desc = "Harpoon Next", },
     { "<M-p>", function() Harpoon:list():prev() end, desc = "Harpoon Prev", },
 
