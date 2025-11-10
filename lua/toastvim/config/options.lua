@@ -61,7 +61,7 @@ vim.opt.listchars = {
 }
 
 -----------------------------------------------------------
--- Folding
+-- Folding (needs work)
 -----------------------------------------------------------
 vim.o.foldenable = false
 vim.o.foldmethod = "expr"
