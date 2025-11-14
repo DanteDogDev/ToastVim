@@ -12,9 +12,6 @@ pcall(vim.keymap.del, "n", "gri")
 pcall(vim.keymap.del, "n", "grn")
 pcall(vim.keymap.del, "n", "grr")
 
--- quit
-ToastVim.nmap("<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
-
 -- Deleting
 ToastVim.nvmap("x", '"_x')
 
