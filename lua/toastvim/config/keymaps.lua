@@ -6,6 +6,9 @@ end, { expr = true, desc = "Escape and clear hlsearch" })
 -- open lazy ui
 ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
+-- usefull keymap for copying filename and linenumber for making breakpoints in gdb
+ToastVim.nmap("y:", "<CMD>let @+=expand('%:t') . ':' . line('.')<CR>", { desc = "Filename:Number"})
+
 -- Disable lsp default keymaps
 pcall(vim.keymap.del, "n", "gra")
 pcall(vim.keymap.del, "n", "gri")
