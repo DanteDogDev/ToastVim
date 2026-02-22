@@ -15,6 +15,7 @@ return {
       "regex",
       "bash",
       "lua",
+      "rust",
 
       "markdown",
       "markdown_inline",

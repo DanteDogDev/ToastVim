@@ -7,7 +7,7 @@ end, { expr = true, desc = "Escape and clear hlsearch" })
 ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 
 -- usefull keymap for copying filename and linenumber for making breakpoints in gdb
-ToastVim.nmap("y:", "<CMD>let @+=expand('%:t') . ':' . line('.')<CR>", { desc = "Filename:Number"})
+ToastVim.nmap("y:", "<CMD>let @+=expand('%:t') . ':' . line('.')<CR>", { desc = "Filename:Number" })
 
 -- Disable lsp default keymaps
 pcall(vim.keymap.del, "n", "gra")
@@ -35,8 +35,7 @@ ToastVim.nmap("<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Wind
 ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Quickfix List
-ToastVim.nmap("<leader>xq",
-function()
+ToastVim.nmap("<leader>xq", function()
   local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
   if not success and err then
     vim.notify(err, vim.log.levels.ERROR)
