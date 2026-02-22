@@ -59,17 +59,4 @@ return {
       })
     end,
   },
-
-  -- LUA
-  {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { "ToastVim" },
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-        { path = "snacks.nvim", words = { "Snacks" } },
-      },
-    },
-  },
 }
