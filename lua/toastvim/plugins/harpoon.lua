@@ -5,7 +5,7 @@ return {
   -- stylua: ignore
   keys = {
     { "<M-=>", function() Harpoon:list():add() end, desc = "Harpoon File", },
-    { "<M-->", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Harpoon Quick Menu", },
+    { "<M-Enter>", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Harpoon Quick Menu", },
     { "<M-n>", function() Harpoon:list():next() end, desc = "Harpoon Next", },
     { "<M-p>", function() Harpoon:list():prev() end, desc = "Harpoon Prev", },
 
@@ -22,6 +22,7 @@ return {
   },
 
   config = function()
+    ---@diagnostic disable-next-line: global-in-non-module
     Harpoon = require("harpoon")
     Harpoon:setup({settings = {save_on_toggle = true}})
 

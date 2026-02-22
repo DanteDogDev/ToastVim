@@ -66,9 +66,9 @@ return {
             return mode_map[s] or s
           end,
         } },
-        lualine_b = { "branch"},
+        lualine_b = { "branch" },
         lualine_c = { filename_fn },
-        lualine_x = { { macro_status, color = "WarningMsg" },"diagnostics" },
+        lualine_x = { { macro_status, color = "WarningMsg" }, "diagnostics" },
         lualine_y = { "lsp_status" },
         lualine_z = { "location" },
       },

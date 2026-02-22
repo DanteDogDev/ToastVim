@@ -10,8 +10,7 @@ return {
     -- image = { enabled = true },
   },
   keys = {
-    { "<leader>gg", function() Snacks.lazygit({ cwd = vim.fn.getcwd() }) end, desc = "Lazygit", },
-    {
+    { "<leader>gg", function() Snacks.lazygit({ cwd = vim.fn.getcwd() }) end, desc = "Lazygit", }, {
       "<leader>fN",
       desc = "Neovim News",
       function()
