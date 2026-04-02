@@ -61,9 +61,9 @@ local function get_templates()
   local file_list = {}
   for _, template in ipairs(files) do
     local filename = vim.fn.fnamemodify(template, ":t")
-    -- if not filename:find("tpl") then
+    if not filename:find("tpl") then
       table.insert(file_list, filename)
-    -- end
+    end
   end
   return file_list
 end
@@ -73,32 +73,29 @@ vim.api.nvim_create_user_command("Template", function(opts)
 end, {
   nargs = 1,
   ---@diagnostic disable-next-line: unused-local
+ ---@diagnostic disable-next-line: unused
   complete = function(arglead, cmdline, cursorpos)
     return get_templates()
   end,
 })
 
 ------------------------------------------------------------------------------------------------------------------------
-
--- vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
---   group = vim.api.nvim_create_augroup("ToastVim.template", {}),
---   callback = function()
---     local file_name = vim.fn.expand("%:t")
---     local file_path = vim.fn.expand("%:p")
---     if file_path == "" or file_path == "/" then
---       return
---     end
---     local file_size = vim.fn.getfsize(file_path)
---     if file_size ~= 0 then
---       return
---     end
---     local tpls = get_tpls()
---     for _, tpl in ipairs(tpls) do
---       local trimmed_tpl = tpl:sub(4)
---       if file_name:sub(-#trimmed_tpl) == trimmed_tpl then
---         ToastVim.template.insert(tpl)
---         return
---       end
---     end
---   end,
--- })
+ToastVim.nmap("<leader>T", function()
+  local file_name = vim.fn.expand("%:t")
+  local file_path = vim.fn.expand("%:p")
+  if file_path == "" or file_path == "/" then
+    return
+  end
+  local file_size = vim.fn.getfsize(file_path)
+  if file_size ~= 0 then
+    return
+  end
+  local tpls = get_tpls()
+  for _, tpl in ipairs(tpls) do
+    local trimmed_tpl = tpl:sub(4)
+    if file_name:sub(- #trimmed_tpl) == trimmed_tpl then
+      ToastVim.template.insert(tpl)
+      return
+    end
+  end
+end, { desc = "Insert Templated File" })
