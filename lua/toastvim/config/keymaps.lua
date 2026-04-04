@@ -1,6 +1,6 @@
 ToastVim.nvmap("<ESC>", function()
-  vim.cmd("nohlsearch")
-  return "<ESC>"
+	vim.cmd("nohlsearch")
+	return "<ESC>"
 end, { expr = true, desc = "Escape and clear hlsearch" })
 
 -- open lazy ui
@@ -38,10 +38,10 @@ ToastVim.nmap("<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Win
 
 -- Quickfix List
 ToastVim.nmap("<leader>xq", function()
-  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-  if not success and err then
-    vim.notify(err, vim.log.levels.ERROR)
-  end
+	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+	if not success and err then
+		vim.notify(err, vim.log.levels.ERROR)
+	end
 end, { desc = "Quickfix List" })
 
 ToastVim.nmap("[q", vim.cmd.cprev, { desc = "Previous Quickfix" }) -- Gets overridden by trouble.nvim

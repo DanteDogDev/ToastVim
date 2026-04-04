@@ -9,31 +9,6 @@ Welcome to **Toastvim** – Where your code gets *Toast*, just like *Toast*!!!!!
 - **Toast**: TOAST!!!!
 - **Template**: File template support using expressions to auto fill information
 
-## ⚡️ Requirements
-
-<details>
-<summary>Dependences</summary>
-
-- lazy.nvim
-- lua
-- lua51
-- luarocks
-- git
-- lazygit
-- fd
-- ripgrep
-- fzf
-- nodejs
-- npm
-- curl
-- rust
-- tree-sitter-cli
-- tectonic
-- ghostscript
-
-
-</details>
-
 ## 📦 Installation
 
 <details><summary>Lazy.nvim</summary>
