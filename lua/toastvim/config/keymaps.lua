@@ -9,14 +9,6 @@ ToastVim.nmap("<leader>uL", "<CMD>Lazy<CR>", { desc = "Lazy" })
 -- usefull keymap for copying filename and linenumber for making breakpoints in gdb
 ToastVim.nmap("y:", "<CMD>let @+=expand('%:t') . ':' . line('.')<CR>", { desc = "Filename:Number" })
 
--- Disable lsp default keymaps
-pcall(vim.keymap.del, "n", "gra")
-pcall(vim.keymap.del, "n", "gri")
-pcall(vim.keymap.del, "n", "grn")
-pcall(vim.keymap.del, "n", "grr")
--- pcall(vim.keymap.del, "n", "grt")
--- pcall(vim.keymap.del, "n", "grx")
-
 -- Deleting
 ToastVim.nvmap("x", '"_x')
 
