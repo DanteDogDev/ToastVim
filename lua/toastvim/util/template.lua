@@ -86,10 +86,6 @@ ToastVim.nmap("<leader>T", function()
 	if file_path == "" or file_path == "/" then
 		return
 	end
-	local file_size = vim.fn.getfsize(file_path)
-	if file_size ~= 0 then
-		return
-	end
 	local tpls = get_tpls()
 	for _, tpl in ipairs(tpls) do
 		local trimmed_tpl = tpl:sub(4)
