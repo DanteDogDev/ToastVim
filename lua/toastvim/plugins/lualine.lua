@@ -42,7 +42,7 @@ return {
 		function filename_fn:update_status()
 			local data = filename_fn.super.update_status(self)
 			data = highlight.component_format_highlight(vim.bo.modified and self.status_colors.modified or
-			self.status_colors.saved) .. data
+				self.status_colors.saved) .. data
 			return data
 		end
 
